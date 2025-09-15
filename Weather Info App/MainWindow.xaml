@@ -1,0 +1,28 @@
+﻿<Window x:Class="Weather_Info_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Weather_Info_App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,20">
+            <TextBox x:Name="CityTextBox" Width="200" FontSize="16" VerticalContentAlignment="Center"></TextBox>
+            <Button Content="Check weather" Margin="10,0,0,0" Padding="10,5" Click="CheckWeatherButton_Click"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock x:Name="CityNameTextBlock" FontSize="24" FontWeight="Bold"></TextBlock>
+            <TextBlock x:Name="TemperatureTextBlock" FontSize="48"></TextBlock>
+            <TextBlock x:Name="DescriptionTextBlock" FontSize="20" FontStyle="Italic"></TextBlock>
+            <TextBlock x:Name="HumidityTextBlock" FontSize="20" Margin="0,10,0,0"></TextBlock>
+            <TextBlock x:Name="WindSpeedTextBlock" FontSize="20"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
