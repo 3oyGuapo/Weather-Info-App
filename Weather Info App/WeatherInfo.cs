@@ -7,9 +7,14 @@ using Newtonsoft.Json;
 
 namespace Weather_Info_App
 {
+    /// <summary>
+    /// Represent main object of api that stores all the information
+    /// Stores all other object inside
+    /// </summary>
     internal class WeatherInfo
     {
-        [JsonProperty("Weather")]
+        //Attribute that link the Weather field from api's return json with this property
+        [JsonProperty("weather")]
         public WeatherDescription[] Weather { get; set; }
 
         [JsonProperty("main")]
@@ -22,13 +27,21 @@ namespace Weather_Info_App
         public string CityName { get; set; }
     }
 
-    public class WeatherDescription
+    /// <summary>
+    /// Represent a specific description for the weather
+    /// Address to the weather object array in the json format return by the api
+    /// </summary>
+    internal class WeatherDescription
     {
         [JsonProperty("description")]
         public string Description { get; set; }
     }
 
-    public class MainInfo
+    /// <summary>
+    /// Represent the main information about the weather such as temperature and humidity
+    /// Address to the main object in the json format return by the api
+    /// </summary>
+    internal class MainInfo
     {
         [JsonProperty("temp")]
         public double Temperature { get; set; }
@@ -37,7 +50,11 @@ namespace Weather_Info_App
         public int Humidity { get; set; }
     }
 
-    public class WindInfo
+    /// <summary>
+    /// Represent the wind information about the weather
+    /// Address to the wind object in the json format return by the api
+    /// </summary>
+    internal class WindInfo
     {
         [JsonProperty("speed")]
         public double Speed { get; set; }
